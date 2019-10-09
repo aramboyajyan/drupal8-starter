@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: text
+label: 'Text block'
+revision: 0
+description: 'Simple text block with a title and a body.'

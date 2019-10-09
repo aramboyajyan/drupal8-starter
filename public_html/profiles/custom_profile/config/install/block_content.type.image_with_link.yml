@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: image_with_link
+label: 'Image with link'
+revision: 1
+description: 'Simple block with an image and a link to any URL.'

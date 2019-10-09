@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Page'
+type: page
+description: 'Use this content type for static pages such as "About Us", "Privacy Policy", "Terms of Use", etc.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

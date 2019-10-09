@@ -1,0 +1,51 @@
+name: Custom
+type: profile
+description: 'Custom installation profile for new projects.'
+version: '8.6.14'
+core: '8.x'
+project: 'drupal'
+install:
+  # Core modules.
+  - node
+  - block
+  - breakpoint
+  - ckeditor
+  - color
+  - config
+  - contextual
+  - menu_link_content
+  - datetime
+  - block_content
+  - editor
+  - image
+  - menu_ui
+  - options
+  - path
+  - page_cache
+  - dynamic_page_cache
+  - big_pipe
+  - dblog
+  - toolbar
+  - field_ui
+  - file
+  - views
+  - views_ui
+  # Contrib modules.
+  - admin_toolbar
+  - admin_toolbar_tools
+  - redirect
+  - pathauto
+  - devel
+  - devel_php
+  - kint
+  - twig_tweak
+  - imce
+  - context
+  - context_ui
+  - linked_field
+  - webform
+  - webform_ui
+  - webform_node
+themes:
+  - bartik
+  - seven

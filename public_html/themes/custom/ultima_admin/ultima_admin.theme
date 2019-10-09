@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Ultima Admin theme.
+ *
+ * Created by: Aram Boyajyan
+ * https://www.aram.cz/
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function ultima_admin_form_devel_execute_form_alter(&$form, FormStateInterface $form_state) {
+  // Add an extra class to the form so that the textarea field inherits
+  // monospace font.
+  $form['#attributes']['class'][] = 'monospace-textarea';
+  // Add an extra class to the form so we can remove the left margin on primary
+  // buttons.
+  $form['#attributes']['class'][] = 'primary-buttons-remove-left-margin';
+  // Make the "Execute" button primary.
+  $form['execute']['op']['#attributes']['class'][] = 'button--primary';
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function ultima_admin_form_rules_expression_edit_alter(&$form, FormStateInterface $form_state) {
+  // Add primary class to the "Save" button.
+  $form['save']['#attributes']['class'][] = 'button--primary';
+}

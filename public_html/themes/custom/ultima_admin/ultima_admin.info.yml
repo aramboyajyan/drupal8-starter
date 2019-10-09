@@ -1,0 +1,21 @@
+name: 'Ultima Admin'
+type: 'theme'
+description: 'Administrative theme based on the core Seven theme.'
+package: 'Custom'
+version: '8.1.0'
+base theme: 'seven'
+core: '8.x'
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first
+libraries:
+  - ultima_admin/global-styling
