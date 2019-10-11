@@ -140,7 +140,7 @@ $settings['skip_permissions_hardening'] = TRUE;
  * Trusted host settings.
  */
 $settings['trusted_host_patterns'] = [
-  '^local$',
+  '^localhost$',
 ];
 
 /**
