@@ -8,7 +8,7 @@
 /public_html/libraries/
 
 # Ignore sensitive information.
-/public_html/sites/*/settings.php
+#/public_html/sites/*/settings.php
 # Make sure that we ignore all variations of settings.php file.
 /public_html/sites/*/settings.*.php
 
