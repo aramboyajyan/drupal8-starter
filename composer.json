@@ -1,14 +1,13 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 8 projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "",
-            "role": ""
-        }
-    ],
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
     "repositories": [
         {
             "type": "composer",
@@ -16,10 +15,10 @@
         }
     ],
     "require": {
-        "php": ">=5.6",
         "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.6.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-project-message": "^8.8",
+        "drupal/core-recommended": "^8.8",
         "drupal/address": "*",
         "drupal/admin_toolbar": "*",
         "drupal/backup_migrate": "*",
@@ -28,7 +27,6 @@
         "drupal/chosen": "*",
         "drupal/console": "~1.0",
         "drupal/context": "*",
-        "drupal/core": "^8.7",
         "drupal/devel": "*",
         "drupal/devel_php": "*",
         "drupal/entity_usage": "^2.0@alpha",
@@ -42,19 +40,11 @@
         "drupal/recaptcha": "*",
         "drupal/field_group": "*",
         "drupal/redirect": "*",
-        "drupal/rules": "^3.0@alpha",
         "drupal/token": "*",
-        "drupal/twig_tweak": "*",
         "drupal/webform": "*",
-        "drupal/zurb_foundation": "^5.0@beta",
-        "drush/drush": "^9.0.0",
-        "vlucas/phpdotenv": "^2.4",
-        "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
-        "zaporylie/composer-drupal-optimizations": "^1.0"
+        "drush/drush": "^9.0.0"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.6.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -64,30 +54,11 @@
     "config": {
         "sort-packages": true
     },
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ],
-        "files": ["load.environment.php"]
-    },
-    "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
     "extra": {
-        "composer-exit-on-patch-failure": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "public_html/"
+            }
         },
         "installer-paths": {
             "public_html/core": ["type:drupal-core"],
@@ -95,13 +66,17 @@
             "public_html/modules/contrib/{$name}": ["type:drupal-module"],
             "public_html/profiles/contrib/{$name}": ["type:drupal-profile"],
             "public_html/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/{$name}": ["type:drupal-drush"]
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "public_html/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "public_html/themes/custom/{$name}": ["type:drupal-custom-theme"]
         },
-        "drupal-scaffold": {
-            "initial": {
-                ".editorconfig": "../.editorconfig",
-                ".gitattributes": "../.gitattributes"
-            }
+        "drupal-starter-message": {
+            "include-keys": ["homepage", "support"],
+            "post-create-project-cmd-message": [
+                "<bg=blue;fg=white>                                                         </>",
+                "<bg=blue;fg=white>  Done!                                                  </>",
+                "<bg=blue;fg=white>                                                         </>"
+            ]
         }
     }
 }
